@@ -166,6 +166,9 @@ class OrderedWebhook(object):
                 else:
                     pass  # discard
 
+            except asyncio.CancelledError:
+                pass
+
             except asyncio.TimeoutError:
                 # debug message
                 # print('Timeout')
